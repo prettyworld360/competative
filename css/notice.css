@@ -1,0 +1,238 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ############################################################################################################
+    Navigation-Bar
+############################################################################################################# */
+nav{
+    top: 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 9vh;
+    background-color: rgb(226, 226, 226);
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom:1px solid rgb(134, 133, 133);
+    position: fixed;
+    width:100vw;
+    z-index:3;
+}
+.logo{
+    font: 4vh Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0 1.8vw;
+}
+.logo span a{
+    text-decoration: none;
+    color: #353535;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    letter-spacing: 0px;
+    font-size: 3vh;
+    letter-spacing: 0.5px;
+    color:#363636;
+}
+.nav-links a:hover{
+    color: rgb(0, 113, 189);
+}
+.burger{
+    display: none;
+    cursor: pointer;
+    margin-right: 3vw;
+}
+.burger div{
+    width: 20px;
+    height: 2px;
+    margin: 5px;
+    background-color: #6d6d6d;
+}
+/* ############################################# Media - Query ############################################# */
+@media (min-width:608px) and (max-width:2000px){
+    .nav-links{
+        width: 75vw;
+    }
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        overflow-y: scroll;
+        position: absolute;
+         right:0px;
+         height: 90vh;
+         top:8vh;
+         background-color:rgb(226, 226, 226);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 100vw;
+         transform: translateX(-150%);
+         transition: transform 0.2s ease-in;
+    }
+    .burger{
+        display: block;
+        border: 1px solid black;
+    }
+    .nav-links li .sub-ul li{
+        margin:10px 0px;
+    }
+}
+@media (min-height:150px) and (max-height:240px){
+    .nav-links{
+        margin-top: 3%;
+    }
+}
+/* ############################################ Burger - Lines ############################################ */
+.nav-active{
+    transform: translateX(0%);
+}
+.hi .line1{
+    transform: rotate(-45deg) translate(-5px,5px);
+}
+.hi .line2{
+    opacity: 0;
+}
+.hi .line3{
+    transform: rotate(45deg) translate(-5px,-5px);
+}
+/* ############################################################################################################
+    Body & Footer
+############################################################################################################ */
+div.bdy-ftr{
+    position: absolute;
+    top: 8vh;
+    width: 100vw;
+    background-color:#dddbdb;
+}
+/* ############################################ Body - Between ############################################ */
+div.bdy .notice{
+    margin: 5vh 3vw;
+    padding: 5px;
+    height: fit-content;
+    background-color: rgb(221, 220, 220);
+    box-shadow: -2px -2px 8px rgba(255,255,255,1),
+                -2px -2px 12px rgba(255,255,255, 0.5),
+                inset 2px 2px 4px rgba(255,255,255,0.1),
+                2px 2px 8px rgba(0,0,0,0.5),
+                2px 2px 8px rgba(0,0,0,0.5);
+}
+div.bdy .notice span{
+    font-size: 2em;
+    padding: 1vh 2vw;
+    font-family: 'Lemonada', cursive,'Sansita Swashed', cursive;
+    color:rgb(9, 68, 177);
+    display: block;
+}
+div.bdy .notice i{
+    font-size: 0.7em;
+    color:rgb(9, 68, 177);
+    text-shadow: 1px 1px 2px rgb(46, 46, 46),
+                 1px 1px 2px rgb(46, 46, 46),
+                 1px 1px 2px rgb(46, 46, 46);
+}
+div.bdy .notice span span{
+    font-size: 0.5em;
+    float: right;
+}
+div.bdy .notice .para{
+    padding: 2vh 1vw;
+    display: flex;
+    flex-direction: column;
+    
+}
+div.bdy .notice .para p{
+    text-align: center;
+    line-height: 25px;
+    font-size: 1.1em;
+}
+div.bdy .notice .para img{
+    float: right;
+    bottom: 9vh;
+    width: 4em;
+    height: 4em;
+    display:inline-block;
+    border-radius: 50px;
+    box-shadow: -2px -2px 8px rgba(255,255,255,1),
+                -2px -2px 12px rgba(255,255,255, 0.5),
+                inset 2px 2px 4px rgba(255,255,255,0.1),
+                2px 2px 8px rgba(0,0,0,0.5);
+}
+/* ############################################################################################################
+    Footer
+############################################################################################################ */
+footer{
+    background-color: rgb(128, 128, 129);
+    width:100vw;
+    height:fit-content;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.footer-icons1{
+    margin-top: 1.5vh;
+}
+.footer-icons1 a{
+    text-decoration: none;
+    margin-left: 2vw;
+}
+.footer-icons1 a i{
+    font-size: 5vh;
+    padding:0.7vh;
+    margin: 3vh 0;
+    border-radius: 2vh;
+}
+.footer-icons1 a i:hover{
+    color: #c4cefd;
+}
+.footer-icons1 #ic4,.footer-icons1 #ic1,#ic2,#ic3{
+    color: rgb(243, 242, 242);
+}
+.footer div.footer-icons2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer div.footer-icons2 a:nth-child(3){
+    text-align: center;
+}
+.footer div.footer-icons2 #ic5{
+    color: rgb(0, 0, 0);
+    font-size: 5vh;
+    padding:0.5vh;
+    font-size: 1em;
+    text-decoration: none;
+}
+.footer div.footer-icons2 #ic6{
+    color: black;
+}
+.footer div.footer-icons2 #ic6, .footer div.footer-icons2 #ic7{
+    text-decoration: none;
+}
+.footer-icons2{
+    margin-bottom: 2vh;
+}
+.credits{
+    border-bottom: 1px solid black;
+    padding:0 0 3vh 0;
+}
+.credits, .footer-3{
+    text-align: center;
+}
+.footer-3{
+    padding:2vh 0;
+}

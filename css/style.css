@@ -1,0 +1,445 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ############################################################################################################
+    Navigation-Bar
+############################################################################################################# */
+nav{
+    top: 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 9vh;
+    background-color: rgb(226, 226, 226);
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom:1px solid rgb(134, 133, 133);
+    position: fixed;
+    width:100vw;
+    z-index:3;
+}
+.logo{
+    font: 4vh Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0 1.8vw;
+}
+.logo span a{
+    text-decoration: none;
+    color: #353535;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    letter-spacing: 0px;
+    font-size: 3vh;
+    letter-spacing: 0.5px;
+    color:#363636;
+}
+.nav-links a:hover{
+    color: rgb(0, 113, 189);
+}
+.burger{
+    display: none;
+    cursor: pointer;
+    margin-right: 3vw;
+}
+.burger div{
+    width: 20px;
+    height: 2px;
+    margin: 5px;
+    background-color: #6d6d6d;
+}
+/* ############################################# Media - Query ############################################# */
+@media (min-width:608px) and (max-width:2000px){
+    .nav-links{
+        width: 75vw;
+    }
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        overflow-y: scroll;
+        position: absolute;
+         right:0px;
+         height: 90vh;
+         top:8vh;
+         background-color:rgb(226, 226, 226);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 100vw;
+         transform: translateX(-150%);
+         transition: transform 0.2s ease-in;
+    }
+    .burger{
+        display: block;
+        border: 1px solid black;
+    }
+    .nav-links li .sub-ul li{
+        margin:10px 0px;
+    }
+}
+@media (min-height:150px) and (max-height:240px){
+    .nav-links{
+        margin-top: 3%;
+    }
+}
+/* ############################################ Burger - Lines ############################################ */
+
+.nav-active{
+    transform: translateX(0%);
+}
+.hi .line1{
+    transform: rotate(-45deg) translate(-5px,5px);
+}
+.hi .line2{
+    opacity: 0;
+}
+.hi .line3{
+    transform: rotate(45deg) translate(-5px,-5px);
+}
+/* ############################################################################################################
+    Body & Footer
+############################################################################################################ */
+div.bdy-ftr{
+    position: absolute;
+    top: 8vh;
+    width: 100vw;
+    height: fit-content;
+    background-color:#dddbdb;
+    overflow: hidden;
+}
+/* ############################################ Slide-Show Images ############################################ */
+
+/* Slideshow container ############################################################# */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  .mySlides img{
+    height: 55vw;
+  }
+  /* Caption text ################################################################## */
+  .text {
+    color: #ffffff;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    top: 50%;
+    background: rgb(87, 87, 87);
+    opacity: 0.8; 
+    animation: animate1 1.5s;
+  }
+  @keyframes animate1{
+      0%{
+          transform: translateX(-500px);
+      }
+      50%{
+          display: block;
+          transform: translateX(30vw);
+      }
+  }
+  /* Number text (1/3 etc) ########################################################## */
+  .numbertext {
+    color: #000000;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  /* The dots/bullets/indicators #################################################### */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active {
+    background-color: #717171;
+  }
+  /* Fading animation ############################################################### */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  /* On smaller screens, decrease text size ########################################## */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
+/* ############################################## Name Of Org ############################################## */
+.name-of-org{
+    width: 100%;
+}
+.name-of-org h1{
+    letter-spacing: 1.5px;
+    font-size: 3em;
+    text-align: center;
+    color: rgb(90, 90, 90);
+    margin: 20px 0;
+}
+.name-of-org p{
+    color: rgb(37, 37, 37);
+    text-align: center;
+    margin: -40px 0;
+}
+.name-of-org i{
+    font-size: 1.5em;
+    padding: 5px;
+    color: #bfbbff;
+}
+/* ############################################### Graphuics ############################################### */
+div.graphics{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.in-graphics{
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    align-items: center;
+    padding: 5px;
+}
+.in-graphics i{
+    color: #bfbbff;
+    font-size: 2.5em;
+    padding: 10px;
+}
+.in-graphics h2{
+    color: #707070;
+    padding: 5px 0;
+}
+.in-graphics p{
+    color: #242424;
+    text-align: center;
+}
+/* ############################################ Teaching Skills############################################ */
+.skillh1{
+    text-align: center;
+    color: rgb(112, 112, 112);
+}
+.skills{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+.in-skills{
+    width: 140px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid rgb(204, 204, 204);
+    margin: 5px;
+}
+.in-skills:hover{
+    background-color: rgb(209, 209, 209);
+}
+.in-skills img{
+    width: 140px;
+    height: 140px;
+}
+.in-skills p{
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    color: rgb(51, 51, 51);
+}
+/* ################################################ Toppers ################################################ */
+.topperhead{
+    text-align: center;
+    color: rgb(83, 83, 83);
+}
+.toppers{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px 0 30px 0;
+}
+.in-toppers{
+    width: 140px;
+    box-shadow: -2px -2px 8px rgba(255,255,255,1),
+                -2px -2px 12px rgba(255,255,255, 0.5),
+                inset 2px 2px 4px rgba(255,255,255,0.1),
+                2px 2px 8px rgba(0,0,0,0.5);
+    margin: 5px;
+    text-decoration: none;
+}
+.in-toppers:hover{
+    background-color: rgb(189, 189, 189);
+}
+.in-toppers img{
+    width: 140px;
+    height: 140px;
+    border-radius: 73px;
+}
+/* ############################################# Other-Content ############################################# */
+.othcontent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.othcontent .in-othcontent{
+    margin: 0 5vw;
+    box-shadow: -2px -2px 8px rgba(255,255,255,1),
+                -2px -2px 12px rgba(255,255,255, 0.5),
+                inset 2px 2px 4px rgba(255,255,255,0.1),
+                2px 2px 8px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.othcontent .in-othcontent img{
+    width: 280px;
+}
+.othcontent .in-othcontent p{
+    width: 280px;
+}
+.othcontent .in-othcontent p i{
+    color: rgb(187, 162, 255);
+    font-size: 1.5em;
+}
+@media screen and (max-width:768px){
+    .othcontent .in-othcontent img, .othcontent .in-othcontent p{
+        margin: auto;
+    }
+}
+/* ############################################### Decoration ############################################### */
+.bdy-ftr .decoration{
+    width: 100%;  
+}
+.bdy-ftr .decoration .about{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.bdy-ftr .decoration video{
+    width: 100%;
+    height: fit-content;
+}
+.bdy-ftr .decoration .about .in-about{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top:-160px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+}
+.in-about h2,p{
+    padding: 20px;
+    text-align: center;
+}
+@media screen and (max-width:768px){
+    .decoration{
+        display: none;
+    }
+}
+/* ############################################################################################################
+    Footer
+############################################################################################################ */
+footer{
+    background-color: rgb(128, 128, 129);
+    width:100vw;
+    height:fit-content;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.footer-icons1{
+    margin-top: 1.5vh;
+}
+.footer-icons1 a{
+    text-decoration: none;
+    margin-left: 2vw;
+}
+.footer-icons1 a i{
+    font-size: 5vh;
+    padding:0.7vh;
+    margin: 3vh 0;
+    border-radius: 2vh;
+}
+.footer-icons1 a i:hover{
+    color: #c4cefd;
+}
+.footer-icons1 #ic4,.footer-icons1 #ic1,#ic2,#ic3{
+    color: rgb(243, 242, 242);
+}
+.footer div.footer-icons2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer div.footer-icons2 a:nth-child(3){
+    text-align: center;
+}
+.footer div.footer-icons2 #ic5{
+    color: rgb(0, 0, 0);
+    font-size: 5vh;
+    padding:0.5vh;
+    font-size: 1em;
+    text-decoration: none;
+}
+.footer div.footer-icons2 #ic6{
+    color: black;
+}
+.footer div.footer-icons2 #ic6, .footer div.footer-icons2 #ic7{
+    text-decoration: none;
+}
+.footer-icons2{
+    margin-bottom: 2vh;
+}
+.credits{
+    border-bottom: 1px solid black;
+    padding:0 0 3vh 0;
+}
+.credits, .footer-3{
+    text-align: center;
+}
+.footer-3{
+    padding:2vh 0;
+}
+
+
+
+
+
+
+
+
+
